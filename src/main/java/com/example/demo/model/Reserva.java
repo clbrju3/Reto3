@@ -1,20 +1,73 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+
 @Entity
-@Table(name="Reserva")
-public class Reserva {
+@Table(name = "reservas")
+public class Reserva implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id", unique=true ,nullable = false)
-    private int id;
-    @Column(name="Bicicleta_id")
-    private Integer Bici;
-    @Column(name="Cliente_id")
-    private Integer Id_cliente;
-    @Column(name="Date")
-    private Date Fecha;
-    @Column(name="Fecah_entrega")
-    private Date entrega;
+    private Integer idReserva;
+    private String palco;
+    private String cliente;
+    private Date fechainicio;
+    private Date fechafin;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    @JsonIgnoreProperties("reservas")
+    private Categoria category;
+
+    public Integer getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(Integer id) {
+        this.idReserva = id;
+    }
+
+    public String getPalco() {
+        return palco;
+    }
+
+    public void setPalco(String palco) {
+        this.palco = palco;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public Date getFechainicio() {
+        return fechainicio;
+    }
+
+    public void setFechainicio(Date fechainicio) {
+        this.fechainicio = fechainicio;
+    }
+
+    public Date getFechafin() {
+        return fechafin;
+    }
+
+    public void setFechafin(Date fechafin) {
+        this.fechafin = fechafin;
+    }
+
+    public Categoria getCategory() {
+        return category;
+    }
+
+    public void setCategory(Categoria category) {
+        this.category = category;
+    }
 }
