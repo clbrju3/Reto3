@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Bicicleta;
-import com.example.demo.model.usuario;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

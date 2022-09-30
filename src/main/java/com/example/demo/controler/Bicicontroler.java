@@ -1,9 +1,7 @@
 package com.example.demo.controler;
 
 import com.example.demo.model.Bicicleta;
-import com.example.demo.model.usuario;
 import com.example.demo.servides.Biciservi;
-import com.example.demo.servides.ususervi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 @RestController
-@RequestMapping("/api/Bike")
+@RequestMapping(value = "/api/Bike", method = RequestMethod.GET)
 public class Bicicontroler {
         @Autowired
         Biciservi usu;
