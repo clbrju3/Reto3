@@ -16,7 +16,7 @@ public class Bicicontroler {
         @Autowired
         Biciservi usu;
 
-        @GetMapping("/all")
+        @GetMapping(path="/all")
         public ArrayList<Bicicleta> get() {
             return usu.resultado();
         }
