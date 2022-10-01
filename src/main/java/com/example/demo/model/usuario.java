@@ -1,23 +1,30 @@
 package com.example.demo.model;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Entity
 @Table(name="Client")
 public class usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id", unique=true ,nullable = false)
+    @Column(name="idClient", unique=true ,nullable = false)
  private int id;
- @Column(name="name", nullable = false)
- private String nombre;
- @Column(name="email", nullable = false)
+  @Column(name="email", nullable = false)
  private String email;
- @Column(name="age")
- private Integer numero;
  @Column(name="password")
  private String contraseña;
-
+ @Column(name="name", nullable = false)
+ private String nombre;
+ @Column(name="age")
+ private Integer numero;
+ @ManyToMany
+    @JoinColumn(name="messages")
+    @JsonIgnoreProperties("client")
+    private ArrayList<Mensaje> mensaje;
     public int getId() {
         return id;
     }

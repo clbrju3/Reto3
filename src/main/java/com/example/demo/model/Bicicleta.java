@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,60 +16,61 @@ public class Bicicleta implements Serializable {
     private String nombre;
     @Column(name="brand", nullable = false)
     private String marca;
+    @Column(name="description")
+    private String descrip;
     @ManyToOne
-    @JoinColumn(name="Category_id")
+    @JoinColumn(name="category")
     @JsonIgnoreProperties("bikes")
     private Categoria category;
-    @Column(name="year")
-    private Integer año;
-    @Column(name="Description")
-    private String descrip;
-
+    @Column(name="messages")
+    String messages;
+    @ManyToOne
+    @JoinColumn(name="reservations")
+    @JsonIgnoreProperties("bikes")
+    private Reserva reservations;
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getMarca() {
         return marca;
     }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
-    public Categoria getCategory() {
-        return category;
-    }
-
-    public void setCategory(Categoria category) {
-        this.category = category;
-    }
-
-    public Integer getAño() {
-        return año;
-    }
-
-    public void setAño(Integer año) {
-        this.año = año;
-    }
-
     public String getDescrip() {
         return descrip;
     }
-
     public void setDescrip(String descrip) {
         this.descrip = descrip;
     }
+    public Categoria getCategory() {
+        return category;
+    }
+    public void setCategory(Categoria category) {
+        this.category = category;
+    }
+    public String getMessages() {
+        return messages;
+    }
+    public void setMessages(String messages) {
+        this.messages = messages;
+    }
+    public Reserva getReservations() {
+        return reservations;
+    }
+    public void setReservations(Reserva reservations) {
+        this.reservations = reservations;
+    }
+    
+  
+  
 }

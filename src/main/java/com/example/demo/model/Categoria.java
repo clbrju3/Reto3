@@ -15,7 +15,7 @@ public class Categoria implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCategory;
+    private Integer id;
     private String name;
     private String description;
 
@@ -25,17 +25,15 @@ public class Categoria implements Serializable {
 
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Reserva> reservas;
 
 
-    public Integer getIdCategory() {
-        return idCategory;
+
+    public Integer getid() {
+        return id;
     }
 
-    public void setIdCategory(Integer id) {
-        this.idCategory = id;
+    public void setId(Integer id) {
+        this.id= id;
     }
 
     public String getName() {
@@ -58,16 +56,16 @@ public class Categoria implements Serializable {
         return bicicletas;
     }
 
-    public void setLibs(List<Bicicleta> libs) {
+    public void setLibs(List<Bicicleta> bikes) {
         this.bicicletas = bicicletas;
     }
 
-    public List<Reserva> getReservas() {
+    /*public List<Reserva> getReservas() {
         return reservas;
     }
 
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
-    }
+    }*/
 }
 

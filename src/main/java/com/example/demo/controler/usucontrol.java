@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.servides.ususervi;
 
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -15,7 +14,7 @@ public class usucontrol {
     @Autowired
     ususervi usu;
 
-    @GetMapping("/all")
+    @GetMapping(path="/all")
     public ArrayList<usuario> get() {
         return usu.resultado();
     }

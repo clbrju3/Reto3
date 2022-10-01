@@ -14,13 +14,16 @@ public class Reserva implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReserva;
     private String palco;
+    @OneToMany
+    @JoinColumn(name="client")
+    @JsonIgnoreProperties("clients")
     private String cliente;
     private Date fechainicio;
     private Date fechafin;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservas")
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties("clients")
     private Categoria category;
 
     public Integer getIdReserva() {

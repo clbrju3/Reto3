@@ -14,7 +14,9 @@ public class Biciservi {
 
     public ArrayList<Bicicleta> resultado(){
         return (ArrayList<Bicicleta>) Bicirepo.findAll();
+
     }
+    
     public Bicicleta guardar(Bicicleta usua){
 
         return Bicirepo.save(usua);
