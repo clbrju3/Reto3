@@ -12,16 +12,18 @@ public class Bicicleta implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id", unique=true ,nullable = false)
     private int id;
-    @Column(name="name", unique = true,nullable = false)
-    private String nombre;
     @Column(name="brand", nullable = false)
     private String marca;
-    @Column(name="description")
-    private String descrip;
+    @Column(name="year")
+    private Integer year;
     @ManyToOne
     @JoinColumn(name="category")
     @JsonIgnoreProperties("bikes")
     private Categoria category;
+    @Column(name="name", unique = true,nullable = false)
+    private String nombre;
+    @Column(name="description")
+    private String descrip;
     @Column(name="messages")
     String messages;
     @ManyToOne
