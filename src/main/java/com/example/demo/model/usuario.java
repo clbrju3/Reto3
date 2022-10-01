@@ -11,57 +11,41 @@ import java.util.ArrayList;
 public class usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idClient", unique=true ,nullable = false)
- private int id;
-  @Column(name="email", nullable = false)
- private String email;
- @Column(name="password")
- private String contraseña;
- @Column(name="name", nullable = false)
- private String nombre;
- @Column(name="age")
- private Integer numero;
- @ManyToMany
-    @JoinColumn(name="messages")
-    @JsonIgnoreProperties("client")
-    private ArrayList<Mensaje> mensaje;
-    public int getId() {
-        return id;
+    private Integer idClient;
+    private String name;
+    private Integer age;
+    private String password;
+    private String email;
+    public Integer getIdClient() {
+        return idClient;
     }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
     }
-
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
-
+    public Integer getAge() {
+        return age;
+    }
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
+    
 
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
 }
