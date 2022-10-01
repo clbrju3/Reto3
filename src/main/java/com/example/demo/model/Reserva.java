@@ -3,6 +3,9 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+
+import org.hibernate.boot.archive.scan.spi.ClassDescriptor.Categorization;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Locale.Category;
@@ -23,7 +26,7 @@ public class Reserva implements Serializable {
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("reservas")
-    private Category category;
+    private Categoria category;
 
     public Integer getIdReserva() {
         return idReserva;
@@ -65,11 +68,11 @@ public class Reserva implements Serializable {
         this.fechafin = fechafin;
     }
 
-    public Category getCategory() {
+    public Categoria getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Categoria category) {
         this.category = category;
     }
 
