@@ -5,12 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name="Bike")
-public class Bicicleta implements Serializable {
     @Entity
     @Table(name = "bike")
-    public class Library implements Serializable {
+    public class Bicicleta implements Serializable {
     
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +16,7 @@ public class Bicicleta implements Serializable {
         private String target;
         private String description;
         @ManyToOne
-        @JoinColumn(name = "category")
+        @JoinColumn(name = "idcategory")
         @JsonIgnoreProperties("bikes")
         private Categoria category;
         public Integer getId() {
