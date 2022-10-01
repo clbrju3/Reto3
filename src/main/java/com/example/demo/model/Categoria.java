@@ -23,8 +23,7 @@ public class Categoria implements Serializable {
     @Column(name="bikes")
     @JsonIgnoreProperties("category")
     private List<Bicicleta> bicicletas;
-
-
+    
     public Integer getid() {
         return id;
     }
@@ -56,13 +55,5 @@ public class Categoria implements Serializable {
     public void setbicicletas (List<Bicicleta> bicicletas) {
         this.bicicletas = bicicletas;
     }
-
-    /*public List<Reserva> getReservas() {
-        return reservas;
-    }
-
-    public void setReservas(List<Reserva> reservas) {
-        this.reservas = reservas;
-    }*/
 }
 

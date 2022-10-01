@@ -14,24 +14,21 @@ public class Reserva implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReserva;
     private String palco;
-    @OneToMany
-    @JoinColumn(name="client")
-    @JsonIgnoreProperties("clients")
-    private String cliente;
+    
     private Date fechainicio;
     private Date fechafin;
 
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("clients")
-    private Categoria category;
+    private usuario cliente;
 
     public Integer getIdReserva() {
         return idReserva;
     }
 
-    public void setIdReserva(Integer id) {
-        this.idReserva = id;
+    public void setIdReserva(Integer idReserva) {
+        this.idReserva = idReserva;
     }
 
     public String getPalco() {
@@ -40,14 +37,6 @@ public class Reserva implements Serializable {
 
     public void setPalco(String palco) {
         this.palco = palco;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
     }
 
     public Date getFechainicio() {
@@ -66,11 +55,14 @@ public class Reserva implements Serializable {
         this.fechafin = fechafin;
     }
 
-    public Categoria getCategory() {
-        return category;
+    public usuario getCliente() {
+        return cliente;
     }
 
-    public void setCategory(Categoria category) {
-        this.category = category;
+    public void setCliente(usuario cliente) {
+        this.cliente = cliente;
     }
+
+
+
 }
