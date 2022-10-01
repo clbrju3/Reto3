@@ -16,7 +16,7 @@ import java.io.Serializable;
         private String target;
         private String description;
         @ManyToOne
-        @JoinColumn(name = "idcategory")
+        @JoinColumn(name = "idCategory")
         @JsonIgnoreProperties("bikes")
         private Categoria category;
         public Integer getId() {
