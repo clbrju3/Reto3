@@ -23,10 +23,6 @@ public class Reserva implements Serializable {
     private Date fechainicio;
     private Date fechafin;
 
-    @ManyToOne
-    @JoinColumn(name = "category")
-    @JsonIgnoreProperties("reservas")
-    private Categoria category;
 
     public Integer getIdReserva() {
         return idReserva;
@@ -68,13 +64,7 @@ public class Reserva implements Serializable {
         this.fechafin = fechafin;
     }
 
-    public Categoria getCategory() {
-        return category;
-    }
-
-    public void setCategory(Categoria category) {
-        this.category = category;
-    }
+   
 
 
 }

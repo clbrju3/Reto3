@@ -22,9 +22,6 @@ public class Categoria implements Serializable {
 
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Reserva> reservation;
 
 
 
@@ -72,18 +69,6 @@ public class Categoria implements Serializable {
 
     public void setBikes(List<Bicicleta> bikes) {
         this.bikes = bikes;
-    }
-
-
-
-    public List<Reserva> getReservation() {
-        return reservation;
-    }
-
-
-
-    public void setReservation(List<Reserva> reservation) {
-        this.reservation = reservation;
     }
 
 
