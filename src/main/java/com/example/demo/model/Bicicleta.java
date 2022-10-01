@@ -13,8 +13,9 @@ import java.io.Serializable;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
         private String name;
-        private String target;
+        private String year;
         private String description;
+        private String brand;
         @ManyToOne
         @JoinColumn(name = "idCategory")
         @JsonIgnoreProperties("bikes")
@@ -31,11 +32,11 @@ import java.io.Serializable;
         public void setName(String name) {
             this.name = name;
         }
-        public String getTarget() {
-            return target;
+        public String getYear() {
+            return year;
         }
-        public void setTarget(String target) {
-            this.target = target;
+        public void setYear(String year) {
+            this.year = year;
         }
         public String getDescription() {
             return description;
@@ -43,11 +44,17 @@ import java.io.Serializable;
         public void setDescription(String description) {
             this.description = description;
         }
+        public String getBrand() {
+            return brand;
+        }
+        public void setBrand(String brand) {
+            this.brand = brand;
+        }
         public Categoria getCategory() {
             return category;
         }
         public void setCategory(Categoria category) {
             this.category = category;
         }
-  
+
 }
