@@ -19,7 +19,7 @@ public class Bicicleta implements Serializable {
         private String target;
         private String description;
         @ManyToOne
-        @JoinColumn(name = "categoryId")
+        @JoinColumn(name = "idcategory")
         @JsonIgnoreProperties("bikes")
         private Categoria category;
         public Integer getId() {
