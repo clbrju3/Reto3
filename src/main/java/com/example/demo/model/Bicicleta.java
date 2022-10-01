@@ -23,4 +23,4 @@ public class Bicicleta implements Serializable {
         @JsonIgnoreProperties("libs")
         private Categoria category;
   
-}
+}}
