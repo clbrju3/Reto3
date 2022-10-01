@@ -25,10 +25,6 @@ public class Biciservi {
 
         return Bicirepo.findById(Id);
     }
-    public ArrayList<Bicicleta> Obtenerpornombre(String Id) {
-
-        return Bicirepo.findByNombre(Id);
-    }
     public boolean eliminar(Integer Id){
         try{
             Bicirepo.deleteById(Id);

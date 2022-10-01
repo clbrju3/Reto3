@@ -23,10 +23,6 @@ public class Bicicontroler {
         public Bicicleta Guardar(@RequestBody Bicicleta x) {
             return usu.guardar(x);
         }
-        @GetMapping(path="/query")
-        public ArrayList<Bicicleta> ObtenerporNombre(@RequestParam("nombre") String nombre){
-            return this.usu.Obtenerpornombre(nombre);
-        }
         @GetMapping(path ="/{Id}")
         public Optional<Bicicleta> ObtenerId(@PathVariable("Id") Integer Id){
             return this.usu.ObtenerporId(Id);
