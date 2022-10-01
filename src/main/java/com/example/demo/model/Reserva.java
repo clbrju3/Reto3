@@ -24,7 +24,7 @@ public class Reserva implements Serializable {
     private Date fechafin;
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
+    @JoinColumn(name = "category")
     @JsonIgnoreProperties("reservas")
     private Categoria category;
 
