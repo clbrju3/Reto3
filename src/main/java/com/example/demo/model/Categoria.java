@@ -23,9 +23,6 @@ public class Categoria implements Serializable {
 
 
 
-
-
-
     public Integer getIdCategory() {
         return id;
     }

@@ -16,6 +16,7 @@ public class Bicicontroler {
 
         @GetMapping(path="/all")
         public ArrayList<Bicicleta> get() {
+            System.out.println("Jajasalu2");
             return usu.resultado();
         }
         @PostMapping(path="/save")
