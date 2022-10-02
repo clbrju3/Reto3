@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
     @Entity
@@ -25,7 +24,7 @@ import java.util.List;
         private Categoria category;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("bike")
-        private ArrayList<Reserva> reservations;
+        private List<Reserva> reservations;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("biker")
         private List<Mensaje> messages;
@@ -65,10 +64,10 @@ import java.util.List;
         public void setCategory(Categoria category) {
             this.category = category;
         }
-        public ArrayList<Reserva> getReservations() {
+        public List<Reserva> getReservations() {
             return reservations;
         }
-        public void setReservations(ArrayList<Reserva> reservations) {
+        public void setReservations(List<Reserva> reservations) {
             this.reservations = reservations;
         }
         public List<Mensaje> getMessages() {
