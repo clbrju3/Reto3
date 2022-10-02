@@ -11,7 +11,7 @@ public class Mensaje {
     @Column(name="idMessage", unique=true ,nullable = false)
     private int idMessage;
     @ManyToOne
-    @JoinColumn(name = "idBici")
+    @JoinColumn(name = "id")
     @JsonIgnoreProperties("messages")
     private Bicicleta bike;
     
