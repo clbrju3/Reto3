@@ -21,9 +21,9 @@ public class Reserva implements Serializable {
     private String palco;
     private String cliente;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idBici")
         @JsonIgnoreProperties("reservations")
-        private Bicicleta bicicleta;
+        private Bicicleta bike;
     private Date fechainicio;
     private Date fechafin;
     public Integer getIdReserva() {
@@ -44,11 +44,11 @@ public class Reserva implements Serializable {
     public void setCliente(String cliente) {
         this.cliente = cliente;
     }
-    public Bicicleta getBicicleta() {
-        return bicicleta;
+    public Bicicleta getBike() {
+        return bike;
     }
-    public void setBicicleta(Bicicleta bicicleta) {
-        this.bicicleta = bicicleta;
+    public void setBike(Bicicleta bike) {
+        this.bike = bike;
     }
     public Date getFechainicio() {
         return fechainicio;
@@ -62,7 +62,7 @@ public class Reserva implements Serializable {
     public void setFechafin(Date fechafin) {
         this.fechafin = fechafin;
     }
-
+    
 
     
 
