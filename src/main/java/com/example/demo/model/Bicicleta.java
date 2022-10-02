@@ -12,7 +12,8 @@ import java.util.ArrayList;
     
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer id;
+        @Column(name="id")
+        private Integer idBici;
         private String name;
         private String year;
         private String description;
@@ -27,11 +28,11 @@ import java.util.ArrayList;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("bike")
         private ArrayList<Mensaje> messages;
-        public Integer getId() {
-            return id;
+        public Integer getIdBici() {
+            return idBici;
         }
-        public void setId(Integer id) {
-            this.id = id;
+        public void setIdBici(Integer idBici) {
+            this.idBici = idBici;
         }
         public String getName() {
             return name;
@@ -75,6 +76,8 @@ import java.util.ArrayList;
         public void setMessages(ArrayList<Mensaje> messages) {
             this.messages = messages;
         }
+        
+        
         
         
 

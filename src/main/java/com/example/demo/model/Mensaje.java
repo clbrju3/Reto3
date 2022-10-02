@@ -9,21 +9,21 @@ public class Mensaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idMessage", unique=true ,nullable = false)
-    private int id;
+    private int idMessage;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idBici")
     @JsonIgnoreProperties("messages")
     private Bicicleta bike;
     
     @Column(name="description")
     private String Des;
 
-    public int getId() {
-        return id;
+    public int getIdMessage() {
+        return idMessage;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdMessage(int idMessage) {
+        this.idMessage = idMessage;
     }
 
     public Bicicleta getBike() {
