@@ -10,16 +10,14 @@ public class Mensaje {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idMessage", unique=true ,nullable = false)
     private int idMessage;
+    private String messageText;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idBike")
     @JsonIgnoreProperties("messages")
     private Bicicleta bike;
-    
-    @Column(name="description")
-    private String description;
     @ManyToOne
     @JoinColumn(name="IdClient")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties("messages")
     private usuario client;
     public int getIdMessage() {
         return idMessage;
@@ -27,17 +25,17 @@ public class Mensaje {
     public void setIdMessage(int idMessage) {
         this.idMessage = idMessage;
     }
+    public String getMessageText() {
+        return messageText;
+    }
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
     public Bicicleta getBike() {
         return bike;
     }
     public void setBike(Bicicleta bike) {
         this.bike = bike;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
     }
     public usuario getClient() {
         return client;

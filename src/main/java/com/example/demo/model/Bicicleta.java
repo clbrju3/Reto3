@@ -15,19 +15,21 @@ import java.util.List;
         @Column(name="idx")
         private Integer id;
         private String name;
+        private String brand;
         private String year;
         private String description;
-        private String brand;
+        
         @ManyToOne
         @JoinColumn(name = "id")
         @JsonIgnoreProperties("bikes")
         private Categoria category;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("bike")
-        private List<Reserva> reservations;
+        private List<Mensaje> messages;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("bike")
-        private List<Mensaje> messages;
+        private List<Reserva> reservations;
+        
         public Integer getId() {
             return id;
         }

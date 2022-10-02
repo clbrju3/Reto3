@@ -4,11 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
-import org.hibernate.boot.archive.scan.spi.ClassDescriptor.Categorization;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Locale.Category;
 
 @Entity
 @Table(name = "reservas")
@@ -18,6 +16,8 @@ public class Reserva implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
+    private Date Startdate;
+    private Date devolutionDate;
     @ManyToOne
     @JoinColumn(name="idClient")
     @JsonIgnoreProperties("reservations")
@@ -26,8 +26,6 @@ public class Reserva implements Serializable {
     @JoinColumn(name = "idBici")
         @JsonIgnoreProperties("reservations")
         private Bicicleta bike;
-    private Date Startdate;
-    private Date devolutionDate;
     public Integer getIdReservation() {
         return idReservation;
     }

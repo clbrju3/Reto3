@@ -17,11 +17,11 @@ public class Reservacontrol {
     @Autowired
     private Reservaservi reservasService;
 
-    @GetMapping("/all")
+    @GetMapping(path="/all")
     public List<Reserva> getAll(){
         return reservasService.getAll();
     }
-    @PostMapping("/save")
+    @PostMapping(path="/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva save(@RequestBody  Reserva p){
         return reservasService.save(p);
