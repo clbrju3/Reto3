@@ -17,8 +17,7 @@ public class Reserva implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReserva;
-    private String palco;
+    private Integer idReservation;
     @ManyToOne
     @JoinColumn(name="idClient")
     @JsonIgnoreProperties("reservations")
@@ -27,19 +26,13 @@ public class Reserva implements Serializable {
     @JoinColumn(name = "idBici")
         @JsonIgnoreProperties("reservations")
         private Bicicleta bike;
-    private Date fechainicio;
-    private Date fechafin;
-    public Integer getIdReserva() {
-        return idReserva;
+    private Date Startdate;
+    private Date devolutionDate;
+    public Integer getIdReservation() {
+        return idReservation;
     }
-    public void setIdReserva(Integer idReserva) {
-        this.idReserva = idReserva;
-    }
-    public String getPalco() {
-        return palco;
-    }
-    public void setPalco(String palco) {
-        this.palco = palco;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
     public usuario getClient() {
         return client;
@@ -53,24 +46,17 @@ public class Reserva implements Serializable {
     public void setBike(Bicicleta bike) {
         this.bike = bike;
     }
-    public Date getFechainicio() {
-        return fechainicio;
+    public Date getStartdate() {
+        return Startdate;
     }
-    public void setFechainicio(Date fechainicio) {
-        this.fechainicio = fechainicio;
+    public void setStartdate(Date startdate) {
+        Startdate = startdate;
     }
-    public Date getFechafin() {
-        return fechafin;
+    public Date getDevolutionDate() {
+        return devolutionDate;
     }
-    public void setFechafin(Date fechafin) {
-        this.fechafin = fechafin;
+    public void setDevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
     }
-   
     
-
-    
-
-   
-
-
 }
