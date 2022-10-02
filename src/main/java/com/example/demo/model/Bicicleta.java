@@ -12,7 +12,7 @@ import java.util.List;
     
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name="id")
+        @Column(name="idx")
         private Integer id;
         private String name;
         private String year;
