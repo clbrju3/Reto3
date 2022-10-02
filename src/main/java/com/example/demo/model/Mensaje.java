@@ -13,7 +13,7 @@ public class Mensaje {
     @ManyToOne
     @JoinColumn(name = "idBici")
     @JsonIgnoreProperties("messages")
-    private Bicicleta bike;
+    private Bicicleta biker;
     
     @Column(name="description")
     private String Des;
@@ -27,11 +27,11 @@ public class Mensaje {
     }
 
     public Bicicleta getBike() {
-        return bike;
+        return biker;
     }
 
-    public void setBike(Bicicleta bike) {
-        this.bike = bike;
+    public void setBike(Bicicleta biker) {
+        this.biker = biker;
     }
 
     public String getDes() {

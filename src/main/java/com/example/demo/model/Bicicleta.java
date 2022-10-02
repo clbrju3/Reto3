@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
     @Entity
     @Table(name = "bike")
@@ -26,8 +27,8 @@ import java.util.ArrayList;
         @JsonIgnoreProperties("bike")
         private ArrayList<Reserva> reservations;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
-        @JsonIgnoreProperties("bike")
-        private ArrayList<Mensaje> messages;
+        @JsonIgnoreProperties("biker")
+        private List<Mensaje> messages;
         public Integer getIdBici() {
             return idBici;
         }
@@ -70,10 +71,10 @@ import java.util.ArrayList;
         public void setReservations(ArrayList<Reserva> reservations) {
             this.reservations = reservations;
         }
-        public ArrayList<Mensaje> getMessages() {
+        public List<Mensaje> getMessages() {
             return messages;
         }
-        public void setMessages(ArrayList<Mensaje> messages) {
+        public void setMessages(List<Mensaje> messages) {
             this.messages = messages;
         }
         
