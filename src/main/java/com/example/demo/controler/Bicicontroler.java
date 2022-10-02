@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 @RestController
-@RequestMapping(value = "/api/Bike", method = RequestMethod.GET)
+@RequestMapping("/api/Bike")
 public class Bicicontroler {
         @Autowired
         Biciservi usu;

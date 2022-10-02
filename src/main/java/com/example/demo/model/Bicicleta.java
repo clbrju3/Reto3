@@ -15,7 +15,7 @@ import java.util.List;
         @Column(name="id")
         private Integer idBici;
         private String name;
-        private String year;
+        private String yea;
         private String description;
         private String brand;
         @ManyToOne
@@ -41,10 +41,10 @@ import java.util.List;
             this.name = name;
         }
         public String getYear() {
-            return year;
+            return yea;
         }
-        public void setYear(String year) {
-            this.year = year;
+        public void setYear(String yea) {
+            this.yea = yea;
         }
         public String getDescription() {
             return description;
