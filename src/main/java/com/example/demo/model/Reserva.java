@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservas")
+@Table(name = "reservation")
 public class Reserva implements Serializable {
 
     
@@ -23,7 +23,7 @@ public class Reserva implements Serializable {
     @JsonIgnoreProperties("reservations")
     private usuario client;
     @ManyToOne
-    @JoinColumn(name = "idBici")
+    @JoinColumn(name = "id")
         @JsonIgnoreProperties("reservations")
         private Bicicleta bike;
     public Integer getIdReservation() {
