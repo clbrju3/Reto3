@@ -11,7 +11,7 @@ import com.example.demo.servides.Reservaservi;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Reservas")
+@RequestMapping("/api/Reservation")
 public class Reservacontrol {
 
     @Autowired
