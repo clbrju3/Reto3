@@ -19,7 +19,10 @@ public class Reserva implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReserva;
     private String palco;
-    private String cliente;
+    @ManyToOne
+    @JoinColumn(name="idClient")
+    @JsonIgnoreProperties("reservations")
+    private usuario client;
     @ManyToOne
     @JoinColumn(name = "idBici")
         @JsonIgnoreProperties("reservations")
@@ -38,11 +41,11 @@ public class Reserva implements Serializable {
     public void setPalco(String palco) {
         this.palco = palco;
     }
-    public String getCliente() {
-        return cliente;
+    public usuario getClient() {
+        return client;
     }
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setClient(usuario client) {
+        this.client = client;
     }
     public Bicicleta getBike() {
         return bike;
@@ -62,6 +65,7 @@ public class Reserva implements Serializable {
     public void setFechafin(Date fechafin) {
         this.fechafin = fechafin;
     }
+   
     
 
     

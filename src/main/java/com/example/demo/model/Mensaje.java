@@ -16,30 +16,35 @@ public class Mensaje {
     private Bicicleta bike;
     
     @Column(name="description")
-    private String Des;
-
+    private String description;
+    @ManyToOne
+    @JoinColumn(name="IdClient")
+    @JsonIgnoreProperties("client")
+    private usuario client;
     public int getIdMessage() {
         return idMessage;
     }
-
     public void setIdMessage(int idMessage) {
         this.idMessage = idMessage;
     }
-
     public Bicicleta getBike() {
         return bike;
     }
-
     public void setBike(Bicicleta bike) {
         this.bike = bike;
     }
-
-    public String getDes() {
-        return Des;
+    public String getDescription() {
+        return description;
     }
-
-    public void setDes(String des) {
-        Des = des;
+    public void setDescription(String description) {
+        this.description = description;
     }
+    public usuario getClient() {
+        return client;
+    }
+    public void setClient(usuario client) {
+        this.client = client;
+    }
+    
     
 }
