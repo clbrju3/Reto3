@@ -27,13 +27,13 @@ public class Categoria implements Serializable {
 
 
     public Integer getIdCategory() {
-        return idCategory;
+        return id;
     }
 
 
 
     public void setIdCategory(Integer idCategory) {
-        this.idCategory = idCategory;
+        this.id = idCategory;
     }
 
 
