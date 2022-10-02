@@ -26,7 +26,7 @@ import java.util.List;
         @JsonIgnoreProperties("bike")
         private List<Reserva> reservations;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
-        @JsonIgnoreProperties("biker")
+        @JsonIgnoreProperties("bike")
         private List<Mensaje> messages;
         public Integer getIdBici() {
             return idBici;
