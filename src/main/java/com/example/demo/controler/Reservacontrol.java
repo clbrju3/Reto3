@@ -15,9 +15,9 @@ import java.util.List;
 public class Reservacontrol {
 
     @Autowired
-    private Reservaservi reservasService;
+    Reservaservi reservasService;
 
-    @GetMapping(path="/all")
+    @GetMapping("/all")
     public List<Reserva> getAll(){
         return reservasService.getAll();
     }
