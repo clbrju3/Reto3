@@ -13,13 +13,13 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name="id")
-        private Integer idBici;
+        private Integer id;
         private String name;
         private String year;
         private String description;
         private String brand;
         @ManyToOne
-        @JoinColumn(name = "idCategory")
+        @JoinColumn(name = "id")
         @JsonIgnoreProperties("bikes")
         private Categoria category;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
@@ -28,11 +28,11 @@ import java.util.List;
         @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
         @JsonIgnoreProperties("bike")
         private List<Mensaje> messages;
-        public Integer getIdBici() {
-            return idBici;
+        public Integer getId() {
+            return id;
         }
-        public void setIdBici(Integer idBici) {
-            this.idBici = idBici;
+        public void setId(Integer id) {
+            this.id = id;
         }
         public String getName() {
             return name;
@@ -43,8 +43,8 @@ import java.util.List;
         public String getYear() {
             return year;
         }
-        public void setYear(String yea) {
-            this.year = yea;
+        public void setYear(String year) {
+            this.year = year;
         }
         public String getDescription() {
             return description;
