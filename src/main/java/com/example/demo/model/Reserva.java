@@ -21,7 +21,7 @@ public class Reserva implements Serializable {
     private String status="created";
     @ManyToOne
     @JoinColumn(name = "id")
-        @JsonIgnoreProperties({"reservations","client"})
+        @JsonIgnoreProperties({"reservations","messages.client"})
         private Bicicleta bike;
     @ManyToOne
     @JoinColumn(name="idClient")
