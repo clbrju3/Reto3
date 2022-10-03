@@ -20,6 +20,7 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
+    @Autowired
     private Mensarepo reservasCrud;
     public List<Reserva> getAll(){
 
