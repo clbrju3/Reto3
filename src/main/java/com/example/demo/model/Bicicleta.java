@@ -16,7 +16,7 @@ import java.util.List;
         private Integer id;
         private String name;
         private String brand;
-        private String year;
+        private Integer year;
         private String description;
         
         @ManyToOne
@@ -42,10 +42,10 @@ import java.util.List;
         public void setName(String name) {
             this.name = name;
         }
-        public String getYear() {
+        public Integer getYear() {
             return year;
         }
-        public void setYear(String year) {
+        public void setYear(Integer year) {
             this.year = year;
         }
         public String getDescription() {
