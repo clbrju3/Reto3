@@ -18,7 +18,7 @@ public class ususervi {
     usureposit usureposit;
 
     public ArrayList<usuario> resultado(){
-     jsontraer(1);
+     jsontraer();
         return (ArrayList<usuario>) usureposit.findAll();
     }
     public usuario guardar(usuario usua){
@@ -53,11 +53,16 @@ public class ususervi {
         }
     }
 
-    public void jsontraer(Integer id){
-        System.out.println((ArrayList<usuario>) usureposit.findAll());
-        Optional<usuario> lista=(Optional<usuario>) usureposit.findById(id);
-        if(lista.isPresent()){
-            System.out.println(lista.get().getAge());
+    public void jsontraer(){
+       // System.out.println((ArrayList<usuario>) usureposit.findAll());
+        List<usuario> lista=(List<usuario>) usureposit.findAll();
+        ArrayList g=null;
+        for(usuario x:lista){
+            g.add(x.getIdClient());
+            g.add(x.getName());
+            g.add(x.getAge());
+            g.add(x.getPassword());
+            g.add(x.getReservations());
         }
         ObjectMapper mapper=new ObjectMapper();
         /*try{
