@@ -1,5 +1,6 @@
 package com.example.demo.servides;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.hibernate.boot.model.source.spi.SizeSource;
@@ -17,7 +18,8 @@ public class ususervi {
     usureposit usureposit;
 
     public ArrayList<usuario> resultado(){
-     return (ArrayList<usuario>) usureposit.findAll();
+     jsontraer(1);
+        return (ArrayList<usuario>) usureposit.findAll();
     }
     public usuario guardar(usuario usua){
         return usureposit.save(usua);
@@ -51,9 +53,12 @@ public class ususervi {
         }
     }
 
-    public void jsontraer(){
+    public void jsontraer(Integer id){
         System.out.println((ArrayList<usuario>) usureposit.findAll());
-        ArrayList<usuario> lista=(ArrayList<usuario>) usureposit.findAll();
+        Optional<usuario> lista=(Optional<usuario>) usureposit.findById(id);
+        if(lista.isPresent()){
+            System.out.println(lista.get());
+        }
         ObjectMapper mapper=new ObjectMapper();
         /*try{
             usuario x=mapper.readValue(persona,usuario.class);
