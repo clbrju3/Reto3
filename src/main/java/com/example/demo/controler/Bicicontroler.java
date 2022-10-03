@@ -24,6 +24,9 @@ public class Bicicontroler {
         public Bicicleta Guardar(@RequestBody Bicicleta x) {
             return usu.guardar(x);
         }
+        @PutMapping(path="/update")
+        @ResponseStatus(HttpStatus.CREATED)
+        public Bicicleta Actualizar(@RequestBody Bicicleta x){return usu.actualizar(x);}
         @GetMapping(path ="/{Id}")
         public Optional<Bicicleta> ObtenerId(@PathVariable("Id") Integer Id){
             return this.usu.ObtenerporId(Id);

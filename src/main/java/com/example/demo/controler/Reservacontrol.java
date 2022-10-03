@@ -26,4 +26,7 @@ public class Reservacontrol {
     public Reserva save(@RequestBody  Reserva p){
         return reservasService.save(p);
     }
-}
+    @PutMapping(path="/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reserva actualizar(@RequestBody Reserva p){return reservasService.actualizar(p);
+}}

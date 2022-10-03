@@ -26,7 +26,9 @@ public class Categocontrol {
     public Categoria Guardar(@RequestBody Categoria x) {
         return usu.guardar(x);
     }
-
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Categoria Actualizar(@RequestBody Categoria x){return usu.actualizar(x);}
     @GetMapping(path ="/{Id}")
     public Optional<Categoria> ObtenerId(@PathVariable("Id") Integer Id){
         return this.usu.ObtenerporId(Id);

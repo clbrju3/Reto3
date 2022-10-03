@@ -9,7 +9,7 @@ public class Mensaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idMessage", unique=true ,nullable = false)
-    private int idMessage;
+    private Integer idMessage;
     private String messageText;
     @ManyToOne
     @JoinColumn(name = "idBike")
@@ -19,10 +19,10 @@ public class Mensaje {
     @JoinColumn(name="IdClient")
     @JsonIgnoreProperties({"messages","reservations"})
     private usuario client;
-    public int getIdMessage() {
+    public Integer getIdMessage() {
         return idMessage;
     }
-    public void setIdMessage(int idMessage) {
+    public void setIdMessage(Integer idMessage) {
         this.idMessage = idMessage;
     }
     public String getMessageText() {
