@@ -29,7 +29,7 @@ public class ususervi {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
-                if(p.getEmail()!=null){
+               /* if(p.getEmail()!=null){
                     q.get().setEmail(p.getEmail());
                 }
                 if(p.getAge()!=null){
@@ -43,7 +43,7 @@ public class ususervi {
                 }
                 if(!p.getReservations().isEmpty()){
                     q.get().setReservations(p.getReservations());
-                }
+                }*/
                 usureposit.save(q.get());
                 return q.get();
             }else{
