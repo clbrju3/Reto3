@@ -57,7 +57,7 @@ public class ususervi {
         System.out.println((ArrayList<usuario>) usureposit.findAll());
         Optional<usuario> lista=(Optional<usuario>) usureposit.findById(id);
         if(lista.isPresent()){
-            System.out.println(lista.get());
+            System.out.println(lista.get().getAge());
         }
         ObjectMapper mapper=new ObjectMapper();
         /*try{
