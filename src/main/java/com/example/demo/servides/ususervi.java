@@ -24,8 +24,10 @@ public class ususervi {
     }
     public usuario actualizar(usuario usua){
         Optional<usuario> x=ObtenerporId(usua.getIdClient());
-        usuario y=x.get();
-        System.out.println(y.getIdClient());
+        usuario y=null;
+        if(x.isPresent()){
+            y=x.get();
+        
         if(usua.getName()==null){
             usua.setName(y.getName());
         }
@@ -43,9 +45,11 @@ public class ususervi {
         }
         if(usua.getReservations().isEmpty()){
             usua.setReservations(y.getReservations());
-        }
+        }}
+    else {
+        System.out.println("xd");
+    }
         
-    
 
     return usureposit.save(usua);
 
