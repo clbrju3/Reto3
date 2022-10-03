@@ -22,7 +22,7 @@ public class ususervi {
     public Optional<usuario> ObtenerporId(Integer Id) {
         return usureposit.findById(Id);
     }
-    public usuario update(usuario p){
+    public usuario actualizar(usuario p){
         if(p.getIdClient()!=null){
             Optional<usuario> q = ObtenerporId(p.getIdClient());
             if(q.isPresent()){
