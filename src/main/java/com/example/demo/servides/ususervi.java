@@ -1,11 +1,14 @@
 package com.example.demo.servides;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.hibernate.boot.model.source.spi.SizeSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.model.usuario;
 import com.example.demo.repository.usureposit;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -47,6 +50,20 @@ public class ususervi {
             return p;
         }
     }
+
+    public void jsontraer(){
+        System.out.println((ArrayList<usuario>) usureposit.findAll());
+        ArrayList<usuario> lista=(ArrayList<usuario>) usureposit.findAll();
+        ObjectMapper mapper=new ObjectMapper();
+        /*try{
+            usuario x=mapper.readValue(persona,usuario.class);
+        }
+        catch(){
+
+        }*/
+    }
+
+
     public boolean eliminar(Integer Id){
         try{
             usureposit.deleteById(Id);

@@ -3,6 +3,7 @@ package com.example.demo.servides;
 
 
 import com.example.demo.model.Bicicleta;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,9 +19,13 @@ public class Reservaservi {
     @Autowired
     private Reservarepo reservasCrudRepository;
     public List<Reserva> getAll(){
-        System.out.println((List<Reserva>) reservasCrudRepository.findAll());
+
+
+
         return (List<Reserva>) reservasCrudRepository.findAll();
     }
+
+
     public Optional<Reserva> getReservas(int id){
         return reservasCrudRepository.findById(id);
     }
