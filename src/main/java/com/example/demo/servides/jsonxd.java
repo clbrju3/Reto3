@@ -1,5 +1,6 @@
 package com.example.demo.servides;
 
+import com.example.demo.model.Bicicleta;
 import com.example.demo.model.Reserva;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping(value="/jsonp")
 public class jsonxd{
-public String jsonp(Reserva p){
+
+        public String jsonp(Object p){
 
         ObjectMapper mapper = new ObjectMapper();
         String json="";
