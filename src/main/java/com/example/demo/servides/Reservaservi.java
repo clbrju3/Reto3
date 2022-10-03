@@ -4,6 +4,7 @@ package com.example.demo.servides;
 
 import com.example.demo.model.Bicicleta;
 import com.example.demo.model.Mensaje;
+import com.example.demo.repository.Bicirepo;
 import com.example.demo.repository.Mensarepo;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,24 @@ public class Reservaservi {
     private Reservarepo reservasCrudRepository;
     @Autowired
     private Mensarepo reservasCrud;
+    @Autowired
+    private Bicirepo bici;
     public List<Reserva> getAll(){
 
         List<Mensaje> mensajes=(List<Mensaje>) reservasCrud.findAll();
-        System.out.println(mensajes);
-        return (List<Reserva>) reservasCrudRepository.findAll();
+        List<Bicicleta> bicis=(List<Bicicleta>) bici.findAll();
+        List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
+
+
+        for(int i=0;i<fui.size();i++){
+            List<Mensaje> lista=null;
+            List<Mensaje> listame=(List<Mensaje>) fui.get(i).getBike().getMessages();
+            for(Mensaje x:listame){
+                lista.add(x);
+            }
+            System.out.println(lista);
+        }
+        return fui;
     }
 
 
