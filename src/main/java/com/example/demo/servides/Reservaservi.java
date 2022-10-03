@@ -12,34 +12,22 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
-
+import com.example.demo.servides.jsonxd.*;
 import java.util.List;
 import java.util.Optional;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
-    @Autowired
-    private Mensarepo reservasCrud;
-    @Autowired
-    private Bicirepo bici;
+
     public List<Reserva> getAll(){
-
-        List<Mensaje> mensajes=(List<Mensaje>) reservasCrud.findAll();
-        List<Bicicleta> bicis=(List<Bicicleta>) bici.findAll();
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
-
-
-        for(int i=0;i<fui.size();i++){
-            List<Mensaje> lista=null;
-            List<Mensaje> listame=(List<Mensaje>) fui.get(i).getBike().getMessages();
-            for(Mensaje x:listame){
-                lista.add(x);
-            }
-            System.out.println(lista);
-        }
+        jsonxd jason=new jsonxd();
+        for(Reserva x:fui){
+            System.out.println(jason.jsonp(x));}
         return fui;
     }
 
