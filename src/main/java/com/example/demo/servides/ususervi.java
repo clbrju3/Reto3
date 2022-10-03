@@ -21,6 +21,37 @@ public class ususervi {
     public Optional<usuario> ObtenerporId(Integer Id) {
         return usureposit.findById(Id);
     }
+    public usuario actualizar(usuario usua){
+        Optional<usuario> x=ObtenerporId(usua.getIdClient());
+        if(x.isEmpty()){
+            System.out.println("xd");
+        }
+        else{
+        usuario y=x.get();
+        if(usua.getName()==null){
+            usua.setName(y.getName());
+        }
+        if(usua.getEmail()==null){
+            usua.setEmail(y.getEmail());
+        }
+        if(usua.getPassword()==null){
+            usua.setPassword(y.getPassword());
+        }
+        if(usua.getAge()==null){
+            usua.setAge(y.getAge());
+        }
+        if(usua.getMessages().isEmpty()){
+            usua.setMessages(y.getMessages());
+        }
+        if(usua.getReservations().isEmpty()){
+            usua.setReservations(y.getReservations());
+        }
+        
+    }
+
+    return usureposit.save(usua);
+
+    }
     public boolean eliminar(Integer Id){
         try{
             usureposit.deleteById(Id);

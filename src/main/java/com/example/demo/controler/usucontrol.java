@@ -23,6 +23,11 @@ public class usucontrol {
     public usuario Guardar(@RequestBody usuario x) {
         return usu.guardar(x);
 }
+    @PutMapping(path="/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public usuario Actualizar(@RequestBody usuario x){
+        return usu.actualizar(x);
+    }
    @GetMapping(path ="/{Id}")
     public Optional<usuario> ObtenerId(@PathVariable("Id") Integer Id){
     return this.usu.ObtenerporId(Id);
