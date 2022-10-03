@@ -29,7 +29,7 @@ public class ususervi {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
-               /* if(p.getEmail()!=null){
+               if(p.getEmail()!=null){
                     q.get().setEmail(p.getEmail());
                 }
                 if(p.getAge()!=null){
@@ -38,7 +38,7 @@ public class ususervi {
                 if(p.getPassword()!=null){
                     q.get().setPassword(p.getPassword());
                 }
-                if(!p.getMessages().isEmpty()){
+               /* if(!p.getMessages().isEmpty()){
                     q.get().setMessages(p.getMessages());
                 }
                 if(!p.getReservations().isEmpty()){
