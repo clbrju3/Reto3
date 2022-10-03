@@ -13,11 +13,11 @@ public class Mensaje {
     private String messageText;
     @ManyToOne
     @JoinColumn(name = "idBike")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Bicicleta bike;
     @ManyToOne
     @JoinColumn(name="IdClient")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private usuario client;
     public int getIdMessage() {
         return idMessage;
