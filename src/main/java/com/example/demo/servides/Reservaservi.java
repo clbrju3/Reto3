@@ -3,6 +3,8 @@ package com.example.demo.servides;
 
 
 import com.example.demo.model.Bicicleta;
+import com.example.demo.model.Mensaje;
+import com.example.demo.repository.Mensarepo;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,10 +20,11 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
+    private Mensarepo reservasCrud;
     public List<Reserva> getAll(){
 
-
-
+        List<Mensaje> mensajes=(List<Mensaje>) reservasCrud.findAll();
+        System.out.println(mensajes);
         return (List<Reserva>) reservasCrudRepository.findAll();
     }
 
