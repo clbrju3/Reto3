@@ -1,5 +1,6 @@
 package com.example.demo.servides;
 
+import org.hibernate.boot.model.source.spi.SizeSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.model.usuario;
@@ -24,6 +25,7 @@ public class ususervi {
     public usuario actualizar(usuario usua){
         Optional<usuario> x=ObtenerporId(usua.getIdClient());
         usuario y=x.get();
+        System.out.println(y.getIdClient());
         if(usua.getName()==null){
             usua.setName(y.getName());
         }
