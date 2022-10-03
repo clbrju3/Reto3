@@ -16,16 +16,18 @@ public class Reserva implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private Date Startdate;
+    private Date startDate;
     private Date devolutionDate;
-    @ManyToOne
-    @JoinColumn(name="idClient")
-    @JsonIgnoreProperties("reservations")
-    private usuario client;
+    private String status="created";
     @ManyToOne
     @JoinColumn(name = "id")
         @JsonIgnoreProperties("reservations")
         private Bicicleta bike;
+    @ManyToOne
+    @JoinColumn(name="idClient")
+    @JsonIgnoreProperties({"reservations","messages"})
+    private usuario client;
+    private Integer score;
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -44,17 +46,29 @@ public class Reserva implements Serializable {
     public void setBike(Bicicleta bike) {
         this.bike = bike;
     }
-    public Date getStartdate() {
-        return Startdate;
+    public Date getStartDate() {
+        return startDate;
     }
-    public void setStartdate(Date startdate) {
-        Startdate = startdate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
     public Date getDevolutionDate() {
         return devolutionDate;
     }
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public Integer getScore() {
+        return score;
+    }
+    public void setScore(Integer score) {
+        this.score = score;
     }
     
 }
