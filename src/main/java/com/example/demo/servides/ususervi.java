@@ -23,36 +23,26 @@ public class ususervi {
         return usureposit.findById(Id);
     }
     public usuario actualizar(usuario usua){
-        Optional<usuario> x=ObtenerporId(usua.getIdClient());
-        usuario y=null;
-        if(x.isPresent()){
-            y=x.get();
-        
-        if(usua.getName()==null){
-            usua.setName(y.getName());
+        usuario x=ObtenerporId(usua.getIdClient()).get();
+        if(usua.getName().isEmpty()){
+            usua.setName(x.getName());
         }
-        if(usua.getEmail()==null){
-            usua.setEmail(y.getEmail());
+        if(usua.getEmail().isEmpty()){
+            usua.setEmail(x.getEmail());
         }
-        if(usua.getPassword()==null){
-            usua.setPassword(y.getPassword());
+        if(usua.getPassword().isEmpty()){
+            usua.setPassword(x.getPassword());
         }
         if(usua.getAge()==null){
-            usua.setAge(y.getAge());
+            usua.setAge(x.getAge());
         }
         if(usua.getMessages().isEmpty()){
-            usua.setMessages(y.getMessages());
+            usua.setMessages(x.getMessages());
         }
         if(usua.getReservations().isEmpty()){
-            usua.setReservations(y.getReservations());
-        }}
-    else {
-        System.out.println("xd");
-    }
-        
-
-    return usureposit.save(usua);
-
+            usua.setReservations(x.getReservations());
+        }
+        return usureposit.save(usua);
     }
     public boolean eliminar(Integer Id){
         try{
