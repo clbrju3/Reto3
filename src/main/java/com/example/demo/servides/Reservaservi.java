@@ -27,17 +27,7 @@ public class Reservaservi {
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
         jsonxd jason=new jsonxd();
         for(Reserva x:fui){
-            for(int i=0;i<x.getBike().getMessages().size();i++){
-                Integer id=(x.getBike().getMessages().get(i).getIdMessage());
-                Bicicleta bici=(x.getBike().getMessages().get(i).getBike());
-                String texto=(x.getBike().getMessages().get(i).getMessageText());
-                Mensajexd Mensaje=new Mensajexd();
-                Mensaje.setIdMessage(id);
-                Mensaje.setMessageText(texto);
-                Mensaje.setBike(bici);
-                System.out.println(jason.jsonp(Mensaje));
-            }
-        }
+        System.out.println(jason.jsonp(x));}
 
         return fui;
     }
