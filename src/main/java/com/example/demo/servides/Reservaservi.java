@@ -24,13 +24,12 @@ import java.util.Optional;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_ABSENT)
 public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonIgnoreProperties("client")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
         ArrayList<Mensaje> ft=new ArrayList<>();
