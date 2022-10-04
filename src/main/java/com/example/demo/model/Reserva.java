@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 @Table(name = "reservation")
 public class Reserva implements Serializable {
 
