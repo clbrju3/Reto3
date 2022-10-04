@@ -2,11 +2,13 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name="client")
 public class usuario implements Serializable {
     @Id

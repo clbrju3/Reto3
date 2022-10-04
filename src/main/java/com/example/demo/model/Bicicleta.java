@@ -8,10 +8,10 @@ import java.io.Serializable;
 import java.util.List;
 
     @Entity
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     @Table(name = "bike")
     public class Bicicleta implements Serializable {
-    
+
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name="idx")
