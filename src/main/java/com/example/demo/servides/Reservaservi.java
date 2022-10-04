@@ -15,6 +15,8 @@ import com.example.demo.model.usuario;
 import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
 import com.example.demo.servides.jsonxd.*;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,8 +29,8 @@ public class Reservaservi {
 
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
-        List<Mensaje> ft=null;
-        List<Reserva> frty=null;
+        ArrayList<Mensaje> ft=new ArrayList<>();
+        ArrayList<Reserva> frty=new ArrayList<>();
         usuario xf=new usuario();
         for(Reserva x:fui) {
             List<Mensaje> y = x.getBike().getMessages();
