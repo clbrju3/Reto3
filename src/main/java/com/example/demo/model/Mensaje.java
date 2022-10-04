@@ -3,6 +3,8 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Entity
 @Table(name="Message")
 public class Mensaje {
@@ -37,6 +39,7 @@ public class Mensaje {
     public void setBike(Bicicleta bike) {
         this.bike = bike;
     }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public usuario getClient() {
         return client;
     }

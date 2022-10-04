@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name="client")
 public class usuario implements Serializable {
     @Id
