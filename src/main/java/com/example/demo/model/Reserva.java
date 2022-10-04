@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@JsonInclude(JsonInclude.Include.NON_DEFAULT)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name = "reservation")
 public class Reserva implements Serializable {
 

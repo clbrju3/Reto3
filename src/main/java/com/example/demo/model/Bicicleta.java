@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
     @Entity
-    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @Table(name = "bike")
     public class Bicicleta implements Serializable {
     
