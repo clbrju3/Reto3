@@ -1,12 +1,14 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
     @Entity
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
     @Table(name = "bike")
     public class Bicicleta implements Serializable {
     

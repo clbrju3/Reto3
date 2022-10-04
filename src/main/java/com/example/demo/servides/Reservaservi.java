@@ -1,10 +1,23 @@
 package com.example.demo.servides;
+
+
+
+import com.example.demo.model.Bicicleta;
+import com.example.demo.model.Mensaje;
+import com.example.demo.repository.Bicirepo;
+import com.example.demo.repository.Mensarepo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
+import org.aspectj.bridge.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import com.example.demo.model.usuario;
 import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
+import com.example.demo.servides.jsonxd.*;
 import java.util.List;
 import java.util.Optional;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class Reservaservi {
@@ -14,7 +27,19 @@ public class Reservaservi {
 
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
-        return fui;
+        List<Mensaje> ft=null;
+        List<Reserva> frty=null;
+        for(Reserva x:fui) {
+            List<Mensaje> y = x.getBike().getMessages();
+            for(Mensaje r:y){
+                r.setClient(null);
+                ft.add(r);
+                x.getBike().setMessages(ft);
+                }
+            x.setBike(x.getBike());
+            frty.add(x);
+            }
+        return frty;
     }
 
 
