@@ -1,27 +1,18 @@
 package com.example.demo.servides;
-
-
-
-import com.example.demo.model.Bicicleta;
 import com.example.demo.model.Mensaje;
-import com.example.demo.repository.Bicirepo;
-import com.example.demo.repository.Mensarepo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
-import org.aspectj.bridge.Message;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.example.demo.model.usuario;
 import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
-import com.example.demo.servides.jsonxd.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
@@ -34,7 +25,6 @@ public class Reservaservi {
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
         ArrayList<Mensaje> ft=new ArrayList<>();
         ArrayList<Reserva> frty=new ArrayList<>();
-        usuario xf=new usuario();
         for(Reserva x:fui) {
             List<Mensaje> y = x.getBike().getMessages();
             for(Mensaje r:y){

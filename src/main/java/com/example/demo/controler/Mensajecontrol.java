@@ -32,6 +32,7 @@ public Mensaje Actualizar(@RequestBody Mensaje x){
         return usu.save(x);
 }
     @DeleteMapping(path="/{Id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public Integer borrarporId(@PathVariable("Id") Integer Id){
         this.usu.delete(null);
         return Id;}

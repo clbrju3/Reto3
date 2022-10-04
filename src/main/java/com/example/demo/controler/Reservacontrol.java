@@ -29,4 +29,9 @@ public class Reservacontrol {
     @PutMapping(path="/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva actualizar(@RequestBody Reserva p){return reservasService.actualizar(p);
-}}
+}
+    @DeleteMapping(path="/{Id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Integer borrarporId(@PathVariable("Id") Integer Id){
+        this.reservasService.delete(null);
+        return Id;}}

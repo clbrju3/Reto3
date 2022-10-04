@@ -32,6 +32,7 @@ public class Bicicontroler {
             return this.usu.ObtenerporId(Id);
         }
         @DeleteMapping(path="/{Id}")
+        @ResponseStatus(HttpStatus.NO_CONTENT)
         public Integer borrarporId(@PathVariable("Id") Integer Id){
             this.usu.eliminar(Id);
             return Id;
