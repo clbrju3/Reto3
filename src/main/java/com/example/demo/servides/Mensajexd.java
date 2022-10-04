@@ -7,6 +7,12 @@ public class Mensajexd {
     private String messageText;
     private Bicicleta Bike;
 
+    public Mensajexd(Integer idMessage, String messageText, Bicicleta bike) {
+        this.idMessage = idMessage;
+        this.messageText = messageText;
+        Bike = bike;
+    }
+
     public Integer getIdMessage() {
         return idMessage;
     }

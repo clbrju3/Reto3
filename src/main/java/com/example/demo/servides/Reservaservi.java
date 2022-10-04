@@ -1,21 +1,10 @@
 package com.example.demo.servides;
-
-
-
-import com.example.demo.model.Bicicleta;
-import com.example.demo.model.Mensaje;
-import com.example.demo.repository.Bicirepo;
-import com.example.demo.repository.Mensarepo;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
-import com.example.demo.servides.jsonxd.*;
 import java.util.List;
 import java.util.Optional;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class Reservaservi {
@@ -25,10 +14,6 @@ public class Reservaservi {
 
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
-        jsonxd jason=new jsonxd();
-        for(Reserva x:fui){
-        System.out.println(jason.jsonp(x));}
-
         return fui;
     }
 
