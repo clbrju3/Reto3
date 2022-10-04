@@ -29,10 +29,11 @@ public class Reservaservi {
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
         List<Mensaje> ft=null;
         List<Reserva> frty=null;
+        usuario xf=new usuario();
         for(Reserva x:fui) {
             List<Mensaje> y = x.getBike().getMessages();
             for(Mensaje r:y){
-                r.setClient(null);
+                r.setClient(xf);
                 ft.add(r);
                 x.getBike().setMessages(ft);
                 }
