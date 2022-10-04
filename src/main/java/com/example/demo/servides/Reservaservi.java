@@ -7,6 +7,7 @@ import com.example.demo.model.Mensaje;
 import com.example.demo.repository.Bicirepo;
 import com.example.demo.repository.Mensarepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.aspectj.bridge.Message;
@@ -28,7 +29,8 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonIgnoreProperties("client")
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
         ArrayList<Mensaje> ft=new ArrayList<>();
