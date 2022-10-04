@@ -11,7 +11,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "reservation")
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Reserva implements Serializable {
 
     
