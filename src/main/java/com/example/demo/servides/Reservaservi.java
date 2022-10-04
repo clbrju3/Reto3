@@ -7,6 +7,7 @@ import com.example.demo.model.Mensaje;
 import com.example.demo.repository.Bicirepo;
 import com.example.demo.repository.Mensarepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.aspectj.bridge.Message;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.Optional;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Reservaservi {
 
     @Autowired
@@ -35,7 +37,7 @@ public class Reservaservi {
         for(Reserva x:fui) {
             List<Mensaje> y = x.getBike().getMessages();
             for(Mensaje r:y){
-                r.setClient(xf);
+                r.setClient(null);
                 ft.add(r);
                 x.getBike().setMessages(ft);
                 }
