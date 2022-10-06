@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js2/Funciones.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Clientes</title>
+</head>
+<body onload="traerInformacionu()">
+<h1>Registro de clientes</h1>
+<br>
+<input type="number" placeholder="Id a buscar" id="idr"/>
+<button onclick="Buscaruno()">Encontrar</button>
+<br>
+<br>
+<section id="busc"></section>
+
+<div>
+
+    <input type="number" placeholder="Id" id="idb"/>
+
+    <input type="text" placeholder="Nombre" id="nameb"/>
+
+    <input type="text" placeholder="Email" id="emab"/>
+
+    <input type="number" placeholder="Edad" id="eda"/>
+
+</div>
+<br>
+<button onclick="Guarda()">Guardar!</button>
+<button onclick="Actualiza()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="idbe" value=""/>
+<button onclick="Elimina()">Eliminar</button>
+<br>
+
+<div id="resultador">
+</div>
+<br>
+</body>
+</html>
