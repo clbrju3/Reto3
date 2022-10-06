@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Htmlcontrol {
     @GetMapping("/")
     public String index(){
-        return "Index";
+        return "<h2>Index</h2>";
     }
         @GetMapping("/Vistas/mensage.html")
         public String mensage() {
