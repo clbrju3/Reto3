@@ -1,7 +1,7 @@
 
 function traerInformacion(){
 $.ajax({
-url:"https://http://140.84.191.220:8080/api/Bike/all",
+url:"http://140.84.191.220:8080/api/Bike/all",
 type:"GET",
 datatype:"JSON",
 success:function(respuesta){
@@ -15,7 +15,7 @@ function Buscaruno(){
 let ide=$("#idr").val();
 let ider=parseInt(ide,10);
 $.ajax({
-url:"https://http://140.84.191.220:8080/api/Bike/:"+ide,
+url:"http://140.84.191.220:8080/api/Bike/:"+ide,
 type:"GET",
 datatype:"JSON",
 success:function(respuesta){
@@ -33,7 +33,7 @@ let myData={
     let dataToSend=JSON.stringify(myData);
     console.log(dataToSend);
     $.ajax({
-        url:"https://http://140.84.191.220:8080/api/Bike/update",
+        url:"http://140.84.191.220:8080/api/Bike/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/json",
@@ -51,7 +51,7 @@ function Guardar(){
     let dataToSend=JSON.stringify(myData);
     console.log(dataToSend);
     $.ajax({
-        url:"https://http://140.84.191.220:8080/api/Bike/save",
+        url:"http://140.84.191.220:8080/api/Bike/save",
         type:"POST",
         data:dataToSend,
         contentType:"application/json",
@@ -99,7 +99,7 @@ let myData={
 id:$("#ida").val()}
 let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"https://http://140.84.191.220:8080/api/Bike/delete",
+        url:"http://140.84.191.220:8080/api/Bike/delete",
         type:"DELETE",
         data:dataToSend,
         contentType:"application/json",
