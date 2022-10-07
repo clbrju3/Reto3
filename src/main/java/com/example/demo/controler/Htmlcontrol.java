@@ -5,22 +5,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping ("/")
+@Controller
 public class Htmlcontrol {
-    @GetMapping("")
+    @GetMapping("/")
    /*public String index(){
         return "Index";
     }
         @GetMapping("")*/
         public String mensage() {
-            return "Vistas/html/mensage.html";
+            return "Vistas/html/mensage";
         }
-    @GetMapping("Vistas/html/bicicleta.html")
+    @GetMapping("/Vistas/html/bicicleta.html")
     public String bici() {
         return "Vistas/html/bicicleta";
     }
-    @GetMapping("Vistas/html/cliente.html")
+    @GetMapping("/Vistas/html/cliente.html")
     public String cliente() {
         return "Vistas/hmtl/cliente";
     }
