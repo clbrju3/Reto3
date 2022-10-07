@@ -12,15 +12,15 @@ public class Htmlcontrol {
     public String index(){
         return "Index";
     }
-        @GetMapping("Vistas/mensage.html")
+        @GetMapping("Vistas/html/mensage.html")
         public String mensage() {
             return "Vistas/html/mensage";
         }
-    @GetMapping("Vistas/bicicleta.html")
+    @GetMapping("Vistas/html/bicicleta.html")
     public String bici() {
         return "Vistas/html/bicicleta";
     }
-    @GetMapping("Vistas/cliente.html")
+    @GetMapping("Vistas/html/cliente.html")
     public String cliente() {
         return "Vistas/hmtl/cliente";
     }
