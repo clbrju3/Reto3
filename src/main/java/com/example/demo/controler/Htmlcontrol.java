@@ -12,9 +12,9 @@ public class Htmlcontrol {
     public String index(){
         return "Index";
     }
-        @GetMapping("Vistas/html/mensage.html")
+        @GetMapping("")
         public String mensage() {
-            return "Vistas/html/mensage";
+            return "Vistas/html/mensage.html";
         }
     @GetMapping("Vistas/html/bicicleta.html")
     public String bici() {
