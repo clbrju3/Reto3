@@ -6,21 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping ("http://140.84.191.220:8080")
+@RequestMapping ("/")
 public class Htmlcontrol {
-    @GetMapping("/")
+    @GetMapping("")
     public String index(){
         return "Index";
     }
-        @GetMapping("/Vistas/mensage.html")
+        @GetMapping("Vistas/mensage.html")
         public String mensage() {
             return "Vistas/html/mensage";
         }
-    @GetMapping("/Vistas/bicicleta.html")
+    @GetMapping("Vistas/bicicleta.html")
     public String bici() {
         return "Vistas/html/bicicleta";
     }
-    @GetMapping("/Vistas/cliente.html")
+    @GetMapping("Vistas/cliente.html")
     public String cliente() {
         return "Vistas/hmtl/cliente";
     }
