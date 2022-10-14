@@ -47,7 +47,7 @@ public class Reservacontrol {
             return null;
         }
     }
-    @GetMapping(path="/report-client")
+    @GetMapping(path="/report-clients")
     public List<Conteo> contar(){
         return reservasService.Conteo();
     }
