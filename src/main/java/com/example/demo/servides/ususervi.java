@@ -1,6 +1,8 @@
 package com.example.demo.servides;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
+import com.example.demo.model.Conteo;
+import com.example.demo.model.Reserva;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import org.hibernate.boot.model.source.spi.SizeSource;
@@ -16,7 +18,6 @@ import java.util.Optional;
 public class ususervi {
     @Autowired
     usureposit usureposit;
-
     public ArrayList<usuario> resultado(){
         return (ArrayList<usuario>) usureposit.findAll();
     }

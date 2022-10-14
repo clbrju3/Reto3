@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Vivaldi';
+  src: url(Vivaldi.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Gotico';
+  src: url(Berkahi\ Blackletter.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+#resultadorcatego{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+}
+#resultador{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+}
+#resultado{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+}
+#resultadormensaje{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+}
+#resultadorreser{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+}
+body{
+background-image: url("https://i.ytimg.com/vi/R6jGsw-W5aE/maxresdefault.jpg");}
+#Clientes{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+  border: 3px solid black;
+}
+#Categorias{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+  border: 3px solid black;
+}
+#titulo1{
+  font-size: 0.65cm;
+  font-family:  Vivaldi;
+}
+#titulo2{
+  font-size: 0.65cm;
+  font-family:  Vivaldi;
+}
+#titulo3{
+  font-size: 0.65cm;
+  font-family:  Vivaldi;
+}
+#titulo4{
+  font-size: 0.65cm;
+  font-family:  Vivaldi;
+}
+#titulo5{
+  font-size: 0.65cm;
+  font-family:  Vivaldi;
+}
+#Bici{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+  border: 3px solid black;
+}
+#mensajes{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+  border: 3px solid black;
+}
+#reservas{
+  text-align: center;
+  width: 70%;
+  margin: 1px auto;
+  border: 3px solid black;
+}
+
+#container{
+  background-image: url("https://images.unsplash.com/photo-1583119912267-cc97c911e416?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0ZSUyMHJlbmFjZW50aXN0YXxlbnwwfHwwfHw%3D&w=1000&q=80");
+font-family:sans-serif,Arial;
+width: 60%;
+margin: 0px auto;
+border:1px solid black;
+}
+header {
+  width: 70%;
+  margin: 0px auto;
+font-family:Gotico;
+font-size: 1cm;
+text-align: center;
+  background-image: url("https://i.scdn.co/image/ab67616d0000b2732a2d11880ce5489ccc1d1a37");
+        }
+table{
+  table-layout: fixed;
+  width: 70%;
+  border: 3px solid black;
+} 
+th, td{
+  padding: 20px;
+}

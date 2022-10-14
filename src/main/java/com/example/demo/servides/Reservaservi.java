@@ -1,16 +1,15 @@
 package com.example.demo.servides;
-import com.example.demo.model.Mensaje;
+import com.example.demo.model.*;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.usuario;
-import com.example.demo.model.Reserva;
 import com.example.demo.repository.Reservarepo;
-
+import com.example.demo.repository.usureposit;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +19,7 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
+    private usureposit usureposit;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
@@ -39,10 +39,11 @@ public class Reservaservi {
     }
 
 
-    public Optional<Reserva> getReservas(int id){
-        return reservasCrudRepository.findById(id);
-    }
+    public Optional<Reserva> getReservas(int id){return reservasCrudRepository.findById(id);}
     public Reserva save(Reserva p){
+        if(p.getStatus()==null){
+            p.setStatus("created");
+        }
         return reservasCrudRepository.save(p);
     }
     public Reserva actualizar(Reserva p){
@@ -73,5 +74,51 @@ public class Reservaservi {
     public void delete(Reserva p){
         reservasCrudRepository.delete(p);
     }
+    public List<Reserva> EncontrarReservas(Date x, Date y){
+        List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
+        List<Reserva> wer=null;
+        for(int i=0;i<fui.size();i++){
+            if(fui.get(i).getStartDate().compareTo(x)>0 && fui.get(i).getDevolutionDate().compareTo(y)<0){
+                wer.add(fui.get(i));
+            }
+        }
+        return wer;
+    }
+    public List<Conteo> Conteo(){
+        List<Reserva> p=(List<Reserva>) reservasCrudRepository.findAll();
+        Conteo de=new Conteo();
+        List<Conteo> fr=null;
+        Integer y=0;
+        for(int i=0;i<p.size();i++){
+            Optional<usuario>z=usureposit.findById(i);
+            for(int j=0;j<p.size();j++){
+                if(p.get(j).getClient().getIdClient()==i){
+                    y+=1;
+                }
+                if(y!=0){
+                    de.setClient(z.get());
+                    de.setTotal(y);
+                    fr.add(de);}
+
+            }}
+        return fr;
+    }
+    public Completo Reporte(){
+        List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
+        Completo x=new Completo();
+        Integer y=0 ;
+        Integer r=0;
+        for(int i=0;i<fui.size();i++){
+            if(fui.get(i).getStatus()=="completed"){
+                y+=1;
+            }
+            if(fui.get(i).getStatus()=="cancelled"){
+                r+=1;
+        }
+    }
+        x.setCompleted(y);
+        x.setCancelled(r);
+        return x;
+}
 
 }

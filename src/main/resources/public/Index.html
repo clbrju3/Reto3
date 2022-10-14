@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css"/>
+    <script type="text/javascript" src="Vistas/js/Funcion.js"></script>
+    <script type="text/javascript" src="Vistas/js2/Funciones.js"></script>
+    <script type="text/javascript" src="Vistas/js3/Funcione.js"></script>
+    <script type="text/javascript" src="Vistas/js3/Funcionr.js"></script>
+    <script type="text/javascript" src="Vistas/js3/Funcionw.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Reto3</title>
+</head>
+<body>
+<header><h1>Bicicletas turísticas</h1></header>
+
+<div id="container">
+    <div id="Categorias">
+<div id="titulo1"><h1>Registro de categorias</h1></div>
+<br>
+<div>
+
+    <input type="number" placeholder="Id" id="idc"/>
+
+    <input type="text" placeholder="Nombre" id="catego"/>
+    <input type="text" placeholder="Descripción" id="descrip">
+
+
+
+</div>
+<br>
+<button onclick="GuaCatego()">Guardar!</button>
+<button onclick="ActCatego()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="idbelim" value=""/>
+<button onclick="EliCatego()">Eliminar</button>
+<br>
+<div id="resultadorcatego"></div>
+<br>
+<br>
+<div id="infocatego"></div>
+<br>
+<br>
+</div>
+<div id="Clientes">
+    <div id="titulo2"><h1>Registro de clientes</h1></div>
+<br>
+<button onclick="traerInformacionCliente()"> <img src="https://i.blogs.es/faec42/reload-256/450_1000.webp" height ="30" width="30" /></button>
+<br>
+<br>
+    <div id="resultador">
+    </div>
+    <br>
+    <br>
+    <div id="infobicic"></div>
+    <br>
+    <br>
+<div>
+
+    <input type="number" placeholder="Id" id="idb"/>
+
+    <input type="text" placeholder="Nombre" id="nameb"/>
+
+    <input type="text" placeholder="Email" id="emab"/>
+
+    <input type="number" placeholder="Edad" id="eda"/>
+    <input type="text" placeholder="Contraseña" id="password"/>
+
+</div>
+<br>
+<button onclick="GuaClient()">Guardar!</button>
+<button onclick="ActClient()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="idbe" value=""/>
+<button onclick="EliClient()">Eliminar</button>
+    <br></div>
+<div id="Bici">
+
+<div id="titulo3"><h1>Registro de bicicletas</h1></div>
+<br>
+<button onclick="traerInformacion()"> <img src="https://i.blogs.es/faec42/reload-256/450_1000.webp" height ="30" width="30" /></button>
+<br>
+<br>
+<section id="busc"></section>
+
+<div>
+
+    <input type="number" placeholder="Id" id="idbici"/>
+
+    <input type="text" placeholder="Nombre" id="namebici"/>
+
+    <input type="text" placeholder="Marca" id="brandbici"/>
+
+    <input type="number" placeholder="Modelo" id="modelb"/>
+    <input type="text" placeholder="Descripción" id="descripb"/>
+    <input type="number" placeholder="Año" id="year"/>
+    <input type="number" placeholder="Categoria" id="category_idb"/>
+</div>
+<br>
+<button onclick="GuaBici()">Guardar!</button>
+<button onclick="ActBici()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="ida" value=""/>
+<button onclick="EliBici()">Eliminar</button>
+<br>
+
+<div id="resultado">
+</div>
+<br>
+<br>
+<div id="infobici"></div>
+<br>
+<br>
+</div>
+<div id="mensajes">
+<div id="titulo4"><h1>Registro de mensajes</h1></div>
+<br>
+<div>
+
+    <input type="number" placeholder="Id" id="idbro"/>
+
+    <input type="text" placeholder="Mensaje" id="messa"/>
+
+    <input type="number" placeholder="Id del cliente" id="idCLient"/>
+    <input type="number" placeholder="Id de la bicicleta" id="idBike"/>
+
+</div>
+<br>
+<button onclick="GuaMensa()">Guardar!</button>
+<button onclick="ActMensa()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="idbroe" value=""/>
+<button onclick="EliMensa()">Eliminar</button>
+<br>
+<div id="resultadormensaje" ></div>
+<br>
+<br>
+<div id="infobicim"></div>
+<br>
+<br>
+</div>
+<div id="reservas">
+    <div id="titulo5"><h1>Registro de Reservaciones</h1></div>
+<br>
+<div>
+
+    <input type="number" placeholder="Id" id="idre"/>
+
+    <input type="datetime-local" placeholder="Fecha de reserva" id="start"/>
+    <input type="datetime-local" placeholder="Fecha de devolución" id="devolution"/>
+    <input type="text" placeholder="Estado de la reserva" id="reservacion"/>
+    <input type="number" placeholder="Id del cliente" id="client"/>
+    <input type="number" placeholder="Id de la bicicleta" id="bike"/>
+
+
+</div>
+<br>
+<button onclick="GuaReser()">Guardar!</button>
+<button onclick="ActReser()">Actualizar</button>
+<label>Id a eliminar</label>
+<input type="number" placeholder="Id" id="idbre" value=""/>
+<button onclick="EliReser()">Eliminar</button>
+<br>
+<div id="resultadorreser"></div>
+<br>
+<br>
+<div id="infobicireser"></div>
+</div>
+</div>
+</body>
+</html>

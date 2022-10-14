@@ -1,4 +1,5 @@
 package com.example.demo.controler;
+import com.example.demo.model.Conteo;
 import com.example.demo.model.usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -6,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.servides.ususervi;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -13,7 +15,6 @@ import java.util.Optional;
 public class usucontrol {
     @Autowired
     ususervi usu;
-
     @GetMapping(path="/all")
     public ArrayList<usuario> get() {
         return usu.resultado();
