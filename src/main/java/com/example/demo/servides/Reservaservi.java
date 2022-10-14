@@ -84,10 +84,10 @@ public class Reservaservi {
         }
         return wer;
     }
-    public List<Conteo> Conteo(){
+    public ArrayList<Conteo> Conteo(){
         List<Reserva> p=(List<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
-        List<Conteo> fr=null;
+        ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
         for(int i=0;i<p.size();i++){
             Optional<usuario>z=usureposit.findById(i);
