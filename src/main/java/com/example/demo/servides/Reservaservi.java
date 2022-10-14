@@ -89,17 +89,19 @@ public class Reservaservi {
         Conteo de=new Conteo();
         ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
-        for(int i=0;i<p.size();i++){
+        for(int i=1;i<p.size();i++){
             Optional<usuario>z=usureposit.findById(i);
             for(int j=0;j<p.size();j++){
                 if(p.get(j).getClient().getIdClient()==i){
                     y+=1;
                 }
-                if(y!=0){
-                    de.setClient(z.get());
-                    de.setTotal(y);
-                    fr.add(de);}
-
+                if(y!=0) {
+                    if (z.isPresent()) {
+                        de.setClient(z.get());
+                        de.setTotal(y);
+                        fr.add(de);
+                    }
+                }
             }}
         return fr;
     }
