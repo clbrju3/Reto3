@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.repository.Reservarepo;
 import com.example.demo.repository.usureposit;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.lang.reflect.Array;
+import java.util.*;
 
 @Repository
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
@@ -84,23 +82,34 @@ public class Reservaservi {
         }
         return wer;
     }
+    public Map<Integer,Integer> countFrequencies(ArrayList<Integer> list) {
+        Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
+        for (Integer i : list) {
+            Integer j = hm.get(i);
+            hm.put(i, (j == null) ? 1 : j + 1);
+        }
+        /*for (Map.Entry<String, Integer> val : hm.entrySet()) {
+            System.out.println("Element " + val.getKey() + " "
+                    + "occurs"
+                    + ": " + val.getValue() + " times");
+        }*/
+        return hm;
+    }
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p= (List<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
-        usuario z=new usuario();
+        ArrayList<Integer> re=new ArrayList<>();
         ArrayList<Conteo> fr=new ArrayList<>();
-        for(int i=1;i<p.size();i++){
-            Integer y=0;
-            for(int j=0;j<p.size();j++){
-                if(p.get(j).getClient().getIdClient()==i){
-                    y+=1;
-                    z=p.get(j).getClient();
-            }}
-            if(y!=0){
-                de.setTotal(y);
-                de.setClient(z);
-                fr.add(de);
-            }}
+        for(int i=0;i<p.size();i++){
+            re.add(p.get(i).getClient().getIdClient());
+        }
+        Map<Integer,Integer>z=countFrequencies(re);
+        Integer[] seq= (Integer[]) z.keySet().toArray();
+        for(int s=0;s<z.size();s++){
+            de.setTotal(z.get(seq[s]));
+            de.setClient(usureposit.findById(seq[s]).get());
+            fr.add(de);
+        }
         return fr;
     }
     public Completo Reporte(){
