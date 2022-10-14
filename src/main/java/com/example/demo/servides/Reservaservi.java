@@ -95,13 +95,11 @@ public class Reservaservi {
                 if(p.get(j).getClient().getIdClient()==i){
                     y+=1;
                     z=p.get(j).getClient();
-                }
-                if(y!=0){
-                    de.setTotal(y);
-                    de.setClient(z);
-                    fr.add(de);
-                }
-
+            }}
+            if(y!=0){
+                de.setTotal(y);
+                de.setClient(z);
+                fr.add(de);
             }}
         return fr;
     }
