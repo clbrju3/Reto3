@@ -75,8 +75,8 @@ public class Reservaservi {
         reservasCrudRepository.delete(p);
     }
     public List<Reserva> EncontrarReservas(Date x, Date y){
-        List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
-        List<Reserva> wer=null;
+        List<Reserva> fui=getAll();
+        ArrayList<Reserva> wer=new ArrayList<>();
         for(int i=0;i<fui.size();i++){
             if(fui.get(i).getStartDate().compareTo(x)>0 && fui.get(i).getDevolutionDate().compareTo(y)<0){
                 wer.add(fui.get(i));
@@ -85,7 +85,7 @@ public class Reservaservi {
         return wer;
     }
     public ArrayList<Conteo> Conteo(){
-        List<Reserva> p=(List<Reserva>) reservasCrudRepository.findAll();
+        List<Reserva> p= getAll();
         Conteo de=new Conteo();
         ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
