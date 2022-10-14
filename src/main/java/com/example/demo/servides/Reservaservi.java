@@ -87,21 +87,19 @@ public class Reservaservi {
     public ArrayList<Conteo> Conteo(){
         ArrayList<Reserva> p= (ArrayList<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
-        Optional<usuario> z;
+        usuario z=new usuario();
         ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
         for(int i=1;i<p.size()+1;i++){
-            z=usureposit.findById(i);
             for(int j=0;j<p.size();j++){
                 if(p.get(j).getClient().getIdClient()==i){
                     y+=1;
+                    z=p.get(i).getClient();
                 }
                 if(y!=0) {
-                    if (z.isPresent()) {
-                        de.setClient(z.get());
-                        de.setTotal(y);
-                        fr.add(de);
-                    }
+                    de.setClient(z);
+                    de.setTotal(y);
+                    fr.add(de);
                 }
             }}
         return fr;
