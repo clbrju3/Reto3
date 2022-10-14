@@ -109,10 +109,10 @@ public class Reservaservi {
         Integer y=0 ;
         Integer r=0;
         for(int i=0;i<fui.size();i++){
-            if(fui.get(i).getStatus()=="completed"){
+            if(fui.get(i).getStatus().equals("completed")){
                 y+=1;
             }
-            if(fui.get(i).getStatus()=="cancelled"){
+            if(fui.get(i).getStatus().equals("cancelled")){
                 r+=1;
         }
     }
