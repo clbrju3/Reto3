@@ -87,14 +87,21 @@ public class Reservaservi {
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p= getAll();
         Conteo de=new Conteo();
+        usuario z=new usuario();
         ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
         for(int i=1;i<p.size()+1;i++){
             for(int j=0;j<p.size();j++){
                 if(p.get(j).getClient().getIdClient()==i){
                     y+=1;
+                    z=p.get(j).getClient();
                 }
-                
+                if(y!=0){
+                    de.setTotal(y);
+                    de.setClient(z);
+                    fr.add(de);
+                }
+
             }}
         return fr;
     }
