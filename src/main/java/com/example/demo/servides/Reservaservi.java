@@ -85,7 +85,7 @@ public class Reservaservi {
         return wer;
     }
     public ArrayList<Conteo> Conteo(){
-        List<Reserva> p= getAll();
+        List<Reserva> p= (List<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
         usuario z=new usuario();
         ArrayList<Conteo> fr=new ArrayList<>();
