@@ -1,6 +1,7 @@
 package com.example.demo.model;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -16,6 +17,7 @@ public class usuario implements Serializable {
     private String email;
     private String password;
     private String name;
+    private boolean Admin;
     
     private Integer age;
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
@@ -24,6 +26,16 @@ public class usuario implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
         @JsonIgnoreProperties("client")
         private List<Reserva> reservations;
+
+    @JsonIgnore
+    public boolean getAdmin() {
+        return Admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        Admin = admin;
+    }
+
     public Integer getIdClient() {
         return idClient;
     }

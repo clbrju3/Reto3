@@ -19,7 +19,7 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
-    private usureposit usureposit;
+    private ususervi usureposit;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     public List<Reserva> getAll(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
@@ -86,12 +86,11 @@ public class Reservaservi {
     }
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p=(List<Reserva>) reservasCrudRepository.findAll();
-        Optional<usuario> z=(Optional<usuario>) usureposit.findById(1);
         Conteo de=new Conteo();
         ArrayList<Conteo> fr=new ArrayList<>();
         Integer y=0;
         for(int i=1;i<p.size();i++){
-            z=usureposit.findById(i);
+            Optional<usuario>z=usureposit.ObtenerporId(i);
             for(int j=0;j<p.size();j++){
                 if(p.get(j).getClient().getIdClient()==i){
                     y+=1;
