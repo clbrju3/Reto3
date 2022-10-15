@@ -113,7 +113,8 @@ public class Reservaservi {
         ArrayList<Integer> hkl=new ArrayList<>(frequencymap.keySet());
         for(int j=0;j<hkl.size();j++){
             de.setTotal(frequencymap.get(hkl.get(j)));
-            de.setClient(usureposit.findById(hkl.get(j)).get());
+            if(usureposit.findById(hkl.get(j)).isPresent()){
+            de.setClient(usureposit.findById(hkl.get(j)).get());}
             fr.add(de);
         }
         return fr;
