@@ -98,23 +98,25 @@ public class Reservaservi {
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p= (List<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
-        ArrayList<usuario> re=new ArrayList<>();
+        ArrayList<Integer> re=new ArrayList<>();
         ArrayList<Conteo> fr=new ArrayList<>();
-        for(int i=0;i<p.size();i++){
-            re.add(p.get(i).getClient());
+        for(Reserva x:p){
+            re.add(x.getClient().getIdClient());
         }
-        HashMap<usuario,Integer> frequencymap = new HashMap<usuario,Integer>();
-        for(usuario a:re) {
+        HashMap<Integer,Integer> frequencymap = new HashMap<Integer,Integer>();
+        for(Integer a:re) {
             if(frequencymap.containsKey(a)) {
-                frequencymap.put(a, frequencymap.get(a)+1); }
-            else{ frequencymap.put(a, 1); } }
-        ArrayList<usuario> ter=new ArrayList<>(frequencymap.keySet());
-        for(int j=0;j<ter.size();j++){
-            de.setClient(ter.get(j));
-            de.setTotal(frequencymap.get(ter.get(j)));
+                frequencymap.put(a, frequencymap.get(a)+1);
+            }
+            else{ frequencymap.put(a, 1); }
+        }
+        ArrayList<Integer> hkl=new ArrayList<>(frequencymap.keySet());
+        for(int j=0;j<hkl.size();j++){
+            de.setTotal(frequencymap.get(hkl.get(j)));
+            de.setClient(usureposit.findById(hkl.get(j)).get());
             fr.add(de);
         }
-return fr;
+        return fr;
     }
     public Completo Reporte(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
