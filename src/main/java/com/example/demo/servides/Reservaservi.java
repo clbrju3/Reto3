@@ -17,6 +17,7 @@ public class Reservaservi {
 
     @Autowired
     private Reservarepo reservasCrudRepository;
+    @Autowired
     private usureposit usureposit;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     public List<Reserva> getAll(){
