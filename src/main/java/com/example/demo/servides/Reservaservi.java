@@ -98,19 +98,23 @@ public class Reservaservi {
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p= (List<Reserva>) reservasCrudRepository.findAll();
         Conteo de=new Conteo();
-        ArrayList<Integer> re=new ArrayList<>();
+        ArrayList<usuario> re=new ArrayList<>();
         ArrayList<Conteo> fr=new ArrayList<>();
         for(int i=0;i<p.size();i++){
-            re.add(p.get(i).getClient().getIdClient());
+            re.add(p.get(i).getClient());
         }
-        Map<Integer,Integer>z=countFrequencies(re);
-        Integer[] seq= (Integer[]) z.keySet().toArray();
-        for(int s=0;s<z.size();s++){
-            de.setTotal(z.get(seq[s]));
-            de.setClient(usureposit.findById(seq[s]).get());
+        HashMap<usuario,Integer> frequencymap = new HashMap<usuario,Integer>();
+        for(usuario a:re) {
+            if(frequencymap.containsKey(a)) {
+                frequencymap.put(a, frequencymap.get(a)+1); }
+            else{ frequencymap.put(a, 1); } }
+        ArrayList<usuario> ter=new ArrayList<>(frequencymap.keySet());
+        for(int j=0;j<ter.size();j++){
+            de.setClient(ter.get(j));
+            de.setTotal(frequencymap.get(ter.get(j)));
             fr.add(de);
         }
-        return fr;
+return fr;
     }
     public Completo Reporte(){
         List<Reserva> fui=(List<Reserva>) reservasCrudRepository.findAll();
