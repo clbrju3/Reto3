@@ -104,6 +104,7 @@ public class Reservaservi {
         for(Reserva x:p){
             re.add(x.getClient().getIdClient());
         }
+        System.out.println(re);
         HashMap<Integer,Integer> frequencymap = new HashMap<Integer,Integer>();
         for(Integer a:re) {
             if(frequencymap.containsKey(a)) {
@@ -112,6 +113,8 @@ public class Reservaservi {
             else{ frequencymap.put(a, 1); }
         }
         ArrayList<Integer> hkl=new ArrayList<>(frequencymap.keySet());
+        System.out.println(frequencymap);
+        System.out.println(hkl);
         for(int j=0;j<hkl.size();j++){
             de.setTotal(frequencymap.get(hkl.get(j)));
             if(usureposit.findById(hkl.get(j)).isPresent()){
