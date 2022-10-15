@@ -98,7 +98,6 @@ public class Reservaservi {
     }
     public ArrayList<Conteo> Conteo(){
         List<Reserva> p= (List<Reserva>) reservasCrudRepository.findAll();
-        Conteo de=new Conteo();
         ArrayList<Integer> re=new ArrayList<>();
         ArrayList<Conteo> fr=new ArrayList<>();
         for(Reserva x:p){
@@ -116,6 +115,7 @@ public class Reservaservi {
         System.out.println(frequencymap);
         System.out.println(hkl);
         for(int j=0;j<hkl.size();j++){
+            Conteo de=new Conteo();
             de.setTotal(frequencymap.get(hkl.get(j)));
             if(usureposit.findById(hkl.get(j)).isPresent()){
             de.setClient(usureposit.findById(hkl.get(j)).get());}
